@@ -1,0 +1,37 @@
+physics:
+  g: 9.81
+  L: 1.0
+  m: 1.0
+  theta0_deg: 5.0
+  t_max: 20.0
+  dt: 0.05
+
+generation:
+  save_dir: "datasets"
+  k1_range: [1.0e-6, 1.0e-4]
+  k1_step: 1.0e-7     
+  k2_range: [1.0e-6, 1.0e-4]
+  k2_step: 1.0e-7   
+  L_range: [0.6, 0.9] 
+  L_step: 0.05         
+  m_range: [0.5, 1.0]   
+  m_step: 0.5           
+  noise_range: [0.00, 0.1]
+  noise_step: 0.01     
+
+model:
+  input_dim: 1
+  output_dim: 5         
+  model_dim: 128
+  num_heads: 4
+  num_layers: 6
+  
+  dim_feedforward: 512
+  dropout: 0.1          
+
+train:
+  batch_size: 256    
+  epochs: 100
+  lr: 0.0001
+  val_split: 0.2
+  device: "cuda"
